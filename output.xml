@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221010 12:47:23.256" rpa="false" schemaversion="3">
+<suite id="s1" name="PickApple GET Request" source="C:\Users\dtyjdtyjdyt\PycharmProjects\API testing Robotframework\PickApple_GET_Request.robot">
+<test id="s1-t1" name="TC_001_GET_Request_Fetch_Status-Code" line="8">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>API_Testing</arg>
+<arg>${API_Base_Endpoint}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221010 12:47:23.897" level="INFO">Creating Session using : alias=API_Testing, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221010 12:47:23.897" endtime="20221010 12:47:23.944"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${Get_Response}</var>
+<arg>API_Testing</arg>
+<arg>api/studentsDetails/10001</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221010 12:47:29.037" level="INFO">GET Request : url=http://thetestingworldapi.com/api/studentsDetails/10001 (redirected) 
+ path_url=/api/studentsDetails/10001 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221010 12:47:29.037" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10001 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 10 Oct 2022 09:47:28 GMT', 'Content-Length': '40'} 
+ body={"status":"false","msg":"No data Found"} 
+ </msg>
+<msg timestamp="20221010 12:47:29.037" level="INFO">C:\Users\dtyjdtyjdyt\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20221010 12:47:29.037" level="INFO">${Get_Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221010 12:47:23.944" endtime="20221010 12:47:29.053"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Get_Response}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221010 12:47:29.053" endtime="20221010 12:47:29.053"/>
+</kw>
+<status status="PASS" starttime="20221010 12:47:23.897" endtime="20221010 12:47:29.053"/>
+</test>
+<status status="PASS" starttime="20221010 12:47:23.256" endtime="20221010 12:47:29.053"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="PickApple GET Request">PickApple GET Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
